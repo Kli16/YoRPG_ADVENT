@@ -2,13 +2,13 @@
 
 ## NEW FEATURES
 **Sunday, November 27, 2016: Kevin Li**
-	-Different types of monsters
+	1.Different types of monsters
         
 ## CODE UPDATES
 **Sunday, November 27, 2016: Kevin Li**
-	-Four new monster subclasses were made: Ghoul, DuneThresher, Goat, and DarkDemon
-    -each Monster subclass has different stats
-    -The driver file was changed:
+	1. Four new monster subclasses were made: Ghoul, DuneThresher, Goat, and DarkDemon
+    2. each Monster subclass has different stats
+    3. The driver file was changed:
     	-a new array of the 4 Monster subclasses was added
         -every time the game is run, a subclass of the Monsters array is selected by random
         
@@ -22,4 +22,3 @@
     3. Choose an adventurer
     4. If you feel lucky, choose 2. If not, choose 1.
     5. You will battle. Go back to step 4.
-    
