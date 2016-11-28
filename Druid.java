@@ -13,12 +13,9 @@ public class Druid extends Character {
 	strength = 80;
 	defense = 60;
 	attackR = 0.2;
-<<<<<<< HEAD
 	title = "Druid";
-=======
 	runchance = 0.2;
 	heal = 50;
->>>>>>> 80fcc0a2550645c09dbb4b436598d2ebd3122902
     }
     
     public Druid(String newname){//overloaded constructor

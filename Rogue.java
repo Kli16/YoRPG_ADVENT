@@ -12,14 +12,11 @@ public class Rogue extends Character {
 	health = 100;
 	strength = 80;
 	defense = 30;
-<<<<<<< HEAD
 	attackR = 1.2;
 	title = "Rogue";
-=======
-	attackR = 0.8;
 	runchance = 0.6;
 	heal = 20;
->>>>>>> 80fcc0a2550645c09dbb4b436598d2ebd3122902
+
     }
     
     public Rogue(String newname){//overloaded constructor

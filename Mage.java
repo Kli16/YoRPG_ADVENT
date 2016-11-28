@@ -13,12 +13,9 @@ public class Mage extends Character {
 	strength = 85;
 	defense = 25;
 	attackR = 1.0;
-<<<<<<< HEAD
 	title = "Mage";
-=======
 	runchance = 0.25;
 	heal = 35;
->>>>>>> 80fcc0a2550645c09dbb4b436598d2ebd3122902
     }
     
     public Mage(String newname){//overloaded constructor

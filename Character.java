@@ -11,13 +11,10 @@ public abstract class Character {
     protected int defense;
     protected double attackR;
     protected String name;
-<<<<<<< HEAD
     protected String title;
-
-=======
     protected int heal;
     protected double runchance;
->>>>>>> 80fcc0a2550645c09dbb4b436598d2ebd3122902
+
     protected boolean isAlive() {
 	if (health > 0) {//state of monster
 	    return true;
@@ -46,13 +43,15 @@ public abstract class Character {
 	}
 	return damage;
     }
+
     protected boolean run(){
 	if(Math.random() < runchance){
 	    return true;
 	}
 	return false;
     }
-    protected abstract int healself();
+    protected abstract int healself();    
+
     protected abstract void specialize();/* {
 	defense -= 5;//lose 10 points of defense, could turn into extra damage if player is overzealous with specializing
 	attackR *= 1.5;//increase attack by a steady ratio
@@ -67,4 +66,3 @@ public abstract class Character {
     //}
     
 }
-    

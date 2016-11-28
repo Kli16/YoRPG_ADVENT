@@ -151,19 +151,11 @@ public class YoRPG
 	    System.out.println( "\nNothing to see here. Move along!" );
 	else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
-<<<<<<< HEAD
 
 	    smaug = Monsters[(int)(Math.random() * 30) % 3];
 	    System.out.println("Player: " + pat.about());
 	    System.out.println(smaug.name + ": " + smaug.about());
-	
-=======
 	    
-	    smaug = Monsters[(int)(Math.random() * 3)];
-	    System.out.println("Player: " + pat.about());
-	    System.out.println("Monster: " + smaug.about());
-	    
->>>>>>> 80fcc0a2550645c09dbb4b436598d2ebd3122902
 	    while( smaug.isAlive() && pat.isAlive() ) {
 		
 		// Give user the option of using a special attack:
@@ -174,7 +166,6 @@ public class YoRPG
 		    i = Integer.parseInt( in.readLine() );
 		}
 		catch ( IOException e ) { }
-<<<<<<< HEAD
 
 		if ( i == 2 )
 		    pat.specialize();
@@ -198,11 +189,11 @@ public class YoRPG
 		else {
 		    System.out.println( "\n" + "Ye Olde " + smaug.name + " smacked " + pat.getName() +
 				    " for " + d2 + " points of damage.");
-=======
+
 		if ( i == 2 || i == 1){
 		    if ( i == 2 )
 			pat.specialize();
-		    else
+		    else 
 			pat.normalize();
 		    
 		    //	System.out.println(pat.attackR);
@@ -215,12 +206,12 @@ public class YoRPG
 					" points of damage.");
 		    
 		    if (d2 == 0) {
-			System.out.println("\n" + "Ye Puny " + smaug.about() + "'s smack had no effect on " +
-					   pat.getName() + " the Great.");
+			System.out.println("\n" + "Ye Puny " + smaug.name + "'s smack had no effect on " +
+					   pat.getName() + " the Great " + pat.title + ".");
 		    }
 		    
 		    else {
-			System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+			System.out.println( "\n" + "Ye Olde " + smaug.name + " smacked " + pat.getName() +
 					    " for " + d2 + " points of damage.");
 		    }
 		}
@@ -232,11 +223,11 @@ public class YoRPG
 		    
 		    if (d2 == 0) {
 			System.out.println("\n" + "Ye Puny " + smaug.about() + "'s smack had no effect on " +
-					   pat.getName() + " the Great.");
+					   pat.getName() + " the Great " + pat.title + ".");
 		    }
 		    
 		    else {
-			System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+			System.out.println( "\n" + "Ye Olde " + smaug.name + " smacked " + pat.getName() +
 					    " for " + d2 + " points of damage.");
 		    }
 		}
@@ -248,18 +239,19 @@ public class YoRPG
 		    }
 		    else {
 			d2 = smaug.attack( pat );
+			System.out.println("You failed to escape");
+			
 			if (d2 == 0) {
-			    //	    System.out.println("\n" + "Ye Puny " + Monster.about() + "'s smack had no effect on " +
-			    //     pat.getName() + " the Great.");
+			    	    System.out.println("\n" + "Ye Puny " + smaug.name + "'s smack had no effect on " +
+			         pat.getName() + " the Great " + pat.title + ".");
 			}
 			
 			else {
-			    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
-						" for " + d2 + " points of damage.");
+			    System.out.println( "\n" + "Ye Olde " + smaug.name + " smacked " + pat.getName() + " for " + d2 + " points of damage.");
 			}
 		    }
->>>>>>> 80fcc0a2550645c09dbb4b436598d2ebd3122902
 		}
+		
 	    }//end while
 	    
 	    //option 1: you & the monster perish
@@ -280,8 +272,9 @@ public class YoRPG
 		System.out.println( "Ye olde self hath expired. You got dead." );
 		return false;
 	    }
-	}//end else
+	    }
 
+	}//end else
 	return true;
     }//end playTurn()
     // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
