@@ -13,6 +13,7 @@ public class Warrior extends Character {
 	strength = 100;
 	defense = 40;
 	attackR = 0.4;
+	title = "Warrior";
     }
     
     public Warrior(String newname){//overloaded constructor

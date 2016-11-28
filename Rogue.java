@@ -12,7 +12,8 @@ public class Rogue extends Character {
 	health = 100;
 	strength = 80;
 	defense = 30;
-	attackR = 0.8;
+	attackR = 1.2;
+	title = "Rogue";
     }
     
     public Rogue(String newname){//overloaded constructor
@@ -25,7 +26,7 @@ public class Rogue extends Character {
     }
     public void normalize() {
 	defense = 30;//return to 40
-	attackR = 0.8;//return to 0.4	
+	attackR = 1.2;//return to 0.4	
 	}
     public String about(){
 	return "I am a stealthy doooode";

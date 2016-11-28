@@ -151,9 +151,9 @@ public class YoRPG
 	else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
 
-	    smaug = Monsters[(int)(Math.random() * 3)];
+	    smaug = Monsters[(int)(Math.random() * 30) % 3];
 	    System.out.println("Player: " + pat.about());
-	    System.out.println("Monster: " + smaug.about());
+	    System.out.println(smaug.name + ": " + smaug.about());
 	
 	    while( smaug.isAlive() && pat.isAlive() ) {
 
@@ -182,12 +182,12 @@ public class YoRPG
 				    " points of damage.");
 
 		if (d2 == 0) {
-		    System.out.println("\n" + "Ye Puny " + Monster.about() + "'s smack had no effect on " +
-				       pat.getName() + " the Great.");
+		    System.out.println("\n" + "Ye Puny " + smaug.name + "'s smack had no effect on " +
+				       pat.getName() + " the Great " + pat.title + ".");
 		}
 
 		else {
-		    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+		    System.out.println( "\n" + "Ye Olde " + smaug.name + " smacked " + pat.getName() +
 				    " for " + d2 + " points of damage.");
 		}
 		
@@ -196,14 +196,14 @@ public class YoRPG
 	    //option 1: you & the monster perish
 	    if ( !smaug.isAlive() && !pat.isAlive() ) {
 		System.out.println( "'Twas an epic battle, to be sure... " + 
-				    "You cut ye olde monster down, but " +
-				    "with its dying breath ye olde monster. " +
+				    "You cut ye olde " + smaug.name + " down, but " +
+				    "with its dying breath ye olde " + smaug.name + ". " +
 				    "laid a fatal blow upon thy skull." );
 		return false;
 	    }
 	    //option 2: you slay the beast
 	    else if ( !smaug.isAlive() ) {
-		System.out.println( "HuzzaaH! Ye olde monster hath been slain!" );
+		System.out.println( "HuzzaaH! Ye olde " + smaug.name + " hath been slain!" );
 		return true;
 	    }
 	    //option 3: the beast slays you

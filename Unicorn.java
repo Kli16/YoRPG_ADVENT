@@ -13,6 +13,7 @@ public class Unicorn extends Character {
 	strength = 999;
 	defense = 100;
 	attackR = 1.5;
+	title = "Unicorn";
     }
     
     public Unicorn(String newname){//overloaded constructor

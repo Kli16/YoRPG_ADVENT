@@ -11,6 +11,7 @@ public abstract class Character {
     protected int defense;
     protected double attackR;
     protected String name;
+    protected String title;
 
     protected boolean isAlive() {
 	if (health > 0) {//state of monster
