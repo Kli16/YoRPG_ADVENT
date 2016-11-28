@@ -167,7 +167,7 @@ public class YoRPG
 		}
 		catch ( IOException e ) { }
 
-		if ( i == 2 )
+		/*		if ( i == 2 )
 		    pat.specialize();
 		else
 		    pat.normalize();
@@ -189,7 +189,7 @@ public class YoRPG
 		else {
 		    System.out.println( "\n" + "Ye Olde " + smaug.name + " smacked " + pat.getName() +
 				    " for " + d2 + " points of damage.");
-
+		*/
 		if ( i == 2 || i == 1){
 		    if ( i == 2 )
 			pat.specialize();
@@ -272,8 +272,6 @@ public class YoRPG
 		System.out.println( "Ye olde self hath expired. You got dead." );
 		return false;
 	    }
-	    }
-
 	}//end else
 	return true;
     }//end playTurn()
