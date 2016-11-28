@@ -182,7 +182,7 @@ public class YoRPG
 				    " points of damage.");
 
 		if (d2 == 0) {
-		    System.out.println("\n" + "Ye Puny " + Monster.about() + "'s smack had no effect on " +
+		    System.out.println("\n" + "Ye Puny Monster's smack had no effect on " +
 				       pat.getName() + " the Great.");
 		}
 
