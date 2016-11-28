@@ -9,6 +9,7 @@ public class Rogue extends Character {
     
     public Rogue(){//basic constructor
 	name = "p1";
+	oghp = 100;
 	health = 100;
 	strength = 80;
 	defense = 30;
@@ -25,8 +26,8 @@ public class Rogue extends Character {
     }
     public int healself(){
 	health += heal;
-	if (health > 100){
-	    health = 100;
+	if (health > oghp){
+	    health = oghp;
 	}
 	return heal;
     }
@@ -41,4 +42,27 @@ public class Rogue extends Character {
     public String about(){
 	return "I am a stealthy doooode";
     }
+    
+    public void upgrade() {
+	if (title.equals("Rogue")) {
+	    oghp += 15;
+	    health += 15;
+	    strength += 10;
+	    runchance += 0.2;
+	    heal += 8;
+	    title = "Thief";
+	}
+	
+	else if (title.equals("Thief")) {
+	    oghp += 25;
+	    health += 25;
+	    strength += 30;
+	    runchance += 0.2;
+	    heal += 15;
+	    title = "Ghost";
+	}
+
+	System.out.println("You just became a " + title + ".");
+    }
+        
 }

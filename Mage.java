@@ -10,6 +10,7 @@ public class Mage extends Character {
     public Mage(){//basic constructor
 	name = "p1";
 	health = 140;
+	oghp = 140;
 	strength = 85;
 	defense = 25;
 	attackR = 1.0;
@@ -24,8 +25,8 @@ public class Mage extends Character {
     }
     public int healself(){
 	health += heal;
-	if (health > 140){
-	    health = 140;
+	if (health > oghp){
+	    health = oghp;
 	}
 	return heal;
     }
@@ -40,4 +41,27 @@ public class Mage extends Character {
     public String about(){
 	return "I am a magical doooode";
     }
+    
+    public void upgrade() {
+	if (title.equals("Mage")) {
+	    oghp += 15;
+	    health += 15;
+	    strength += 10;
+	    runchance += 0.15;
+	    heal += 10;
+	    title = "Sorcerer";
+	}
+	
+	else if (title.equals("Sorcerer")) {
+	    oghp += 30;
+	    health += 30;
+	    strength += 35;
+	    runchance += 0.3;
+	    heal += 10;
+	    title = "Wizard";
+	}
+
+	System.out.println("You just became a " + title + ".");
+    }
+        
 }

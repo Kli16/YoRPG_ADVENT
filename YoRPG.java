@@ -19,7 +19,7 @@ public class YoRPG
     // ~~~~~~~~~~~ INSTANCE VARIABLES ~~~~~~~~~~~
 
     //change this constant to set number of encounters in a game
-    public final static int MAX_ENCOUNTERS = 5;
+    public final static int MAX_ENCOUNTERS = 50;
 
     //each round, a Warrior and a Monster will be instantiated...
     private Character pat;   //Is it man or woman? WE STAY UPDATNG OUT HERE
@@ -147,6 +147,16 @@ public class YoRPG
 	int d1, d2, h1;
 	boolean runsuccess;
 
+	System.out.println("You have slain " + pat.mk + " monsters.");
+	//if monster kills = 12 and then 25, upgrade pat
+	if ( pat.mk == 12 ) {
+	    pat.upgrade();
+	}
+
+	if ( pat.mk == 25 ) {
+	    pat.upgrade();
+	}
+
 	if ( Math.random() >= ( difficulty / 3.0 ) )
 	    System.out.println( "\nNothing to see here. Move along!" );
 	else {
@@ -236,6 +246,7 @@ public class YoRPG
 		    if (runsuccess == true){
 			smaug.health = 0;
 			System.out.println( "You ran away.");
+			pat.mk -= 1;
 		    }
 		    else {
 			d2 = smaug.attack( pat );
@@ -265,6 +276,7 @@ public class YoRPG
 	    //option 2: you slay the beast
 	    else if ( !smaug.isAlive() ) {
 		System.out.println( "HuzzaaH! Ye olde " + smaug.name + " hath been slain!" );
+		pat.mk += 1;
 		return true;
 	    }
 	    //option 3: the beast slays you
@@ -272,6 +284,7 @@ public class YoRPG
 		System.out.println( "Ye olde self hath expired. You got dead." );
 		return false;
 	    }
+
 	}//end else
 	return true;
     }//end playTurn()

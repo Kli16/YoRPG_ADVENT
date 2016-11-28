@@ -6,6 +6,8 @@ HW32 -- Ye Olde Role Playing Game, Expanded
 */
 
 public abstract class Character {
+    protected int mk = 0;
+    protected int oghp;
     protected int health;//init hp, strength, defense, regular attack val
     protected int strength;
     protected int defense;
@@ -64,5 +66,6 @@ public abstract class Character {
     protected abstract String about(); //{
 	//	return c.toString();
     //}
-    
+
+    protected abstract void upgrade();
 }

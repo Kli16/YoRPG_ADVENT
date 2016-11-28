@@ -9,6 +9,7 @@ public class Unicorn extends Character {
     
     public Unicorn(){//basic constructor
 	name = "p1";
+	oghp = 250;
 	health = 250;
 	strength = 999;
 	defense = 100;
@@ -25,8 +26,8 @@ public class Unicorn extends Character {
     }
     public int healself(){
 	health += heal;
-	if (health > 250){
-	    health = 250;
+	if (health > oghp){
+	    health = oghp;
 	}
 	return heal;
     }
@@ -41,4 +42,31 @@ public class Unicorn extends Character {
     public String about(){
 	return "I am a unicornical doooode";
     }
+    
+    public void upgrade() {
+	String msg = "";
+	
+	if (title.equals("Unicorn")) {
+	    health += 50;
+	    oghp += 50;
+	    strength += 1;
+	    runchance += 0.5;
+	    heal += 50;
+	    title = "Cocoon";
+	    msg = "The Unicorn formed a cocoon around itself";
+	}
+	
+	else if (title.equals("Cocoon")) {
+	    oghp += 700;
+	    health += 700;
+	    strength += 1500;
+	    runchance += 1.0;
+	    heal += 200;
+	    title = "Unipegasus";
+	    msg = "The Cocoon's shell burst open to reveal a unipegasus";
+	}
+
+	System.out.println(msg);
+    }
+        
 }

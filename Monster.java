@@ -33,5 +33,9 @@ public class Monster extends Character {
     public String about() {
 	return "I am a misunderstood doooode";
     }
+
+    public void upgrade() {
+	System.out.println("So I'm just never good enough for you, is that it?");
+    }//#ThanksgivingClapBacks
     
 }

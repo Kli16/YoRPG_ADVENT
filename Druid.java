@@ -9,6 +9,7 @@ public class Druid extends Character {
     
     public Druid(){//basic constructor
 	name = "p1";
+	oghp = 150;
 	health = 150;
 	strength = 80;
 	defense = 60;
@@ -24,8 +25,8 @@ public class Druid extends Character {
     }
     public int healself(){
 	health += heal;
-	if (health > 150){
-	    health = 150;
+	if (health > oghp){
+	    health = oghp;
 		}
 	return heal;
     }
@@ -40,4 +41,27 @@ public class Druid extends Character {
     public String about(){
 	return "I am a naturey doooode";
     }
+    
+    public void upgrade() {
+	if (title.equals("Druid")) {
+	    oghp += 30;
+	    health += 30;
+	    strength += 10;
+	    runchance += 0.1;
+	    heal += 15;
+	    title = "Shape-Shifter";
+	}
+	
+	else if (title.equals("Shape-Shifter")) {
+	    oghp += 45;
+	    health += 45;
+	    strength += 20;
+	    runchance += 0.1;
+	    heal += 20;
+	    title = "Priest";
+	}
+
+	System.out.println("You just became a " + title + ".");
+    }
+       
 }

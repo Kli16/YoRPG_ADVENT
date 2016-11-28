@@ -9,6 +9,7 @@ public class Warrior extends Character {
     
     public Warrior(){//basic constructor
 	name = "p1";
+	oghp = 125;
 	health = 125;
 	strength = 100;
 	defense = 40;
@@ -24,8 +25,8 @@ public class Warrior extends Character {
     }
     public int healself(){
 	health += heal;
-	if (health > 125){
-	    health = 125;
+	if (health > oghp){
+	    health = oghp;
 		}
 	return heal;
     }
@@ -40,4 +41,27 @@ public class Warrior extends Character {
     public String about(){
 	return "I am a brolic doooode";
     }
+
+    public void upgrade() {
+	if (title.equals("Warrior")) {
+	    oghp += 25;
+	    health += 25;
+	    strength += 25;
+	    runchance += 0.1;
+	    heal += 5;
+	    title = "Knight";
+	}
+	
+	else if (title.equals("Knight")) {
+	    oghp += 35;
+	    health += 35;
+	    strength += 50;
+	    runchance += 0.2;
+	    heal += 10;
+	    title = "Paladin";
+	}
+
+	System.out.println("You just became a " + title + ".");
+    }
+    
 }
