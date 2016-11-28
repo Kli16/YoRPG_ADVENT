@@ -13,12 +13,24 @@ public class Mage extends Character {
 	strength = 85;
 	defense = 25;
 	attackR = 1.0;
+<<<<<<< HEAD
 	title = "Mage";
+=======
+	runchance = 0.25;
+	heal = 35;
+>>>>>>> 80fcc0a2550645c09dbb4b436598d2ebd3122902
     }
     
     public Mage(String newname){//overloaded constructor
 	this();
 	name = newname;//set warrior name
+    }
+    public int healself(){
+	health += heal;
+	if (health > 140){
+	    health = 140;
+	}
+	return heal;
     }
     public void specialize() {
 	defense -= 5;//lose 10 points of defense, could turn into extra damage if player is overzealous with specializing
