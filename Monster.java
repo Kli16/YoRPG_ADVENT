@@ -12,7 +12,16 @@ public class Monster extends Character {
 	strength = (int)((Math.random() * 45.0) + 20);//(20,45], not sure if there was an error w the braces on the hw cuz they were reversed
 	defense = 20;
 	attackR = 1.0;
+	runchance = 1.0;
+	heal = 5;
 	name = "Monster";
+    }
+    public int healself(){
+	health += heal;
+	if (health > 150){
+	    health = 150;
+	}
+	return heal;
     }
     public void specialize() {
 	defense -= 5;//lose 10 points of defense, could turn into extra damage if player is overzealous with specializing

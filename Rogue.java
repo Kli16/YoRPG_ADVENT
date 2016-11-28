@@ -13,11 +13,20 @@ public class Rogue extends Character {
 	strength = 80;
 	defense = 30;
 	attackR = 0.8;
+	runchance = 0.6;
+	heal = 20;
     }
     
     public Rogue(String newname){//overloaded constructor
 	this();
 	name = newname;//set warrior name
+    }
+    public int healself(){
+	health += heal;
+	if (health > 100){
+	    health = 100;
+	}
+	return heal;
     }
     public void specialize() {
 	defense -= 5;//lose 10 points of defense, could turn into extra damage if player is overzealous with specializing

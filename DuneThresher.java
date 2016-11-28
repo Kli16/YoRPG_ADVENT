@@ -12,7 +12,16 @@ public class DuneThresher extends Monster {
 	strength = (int)((Math.random() * 45.0) + 20);//(20,45], not sure if there was an error w the braces on the hw cuz they were reversed
 	defense = 30;
 	attackR = 1.6;
+	runchance = 1.0;
+	heal = 20;
 	name = "DuneThresher";
+    }
+    public int healself(){
+	health += heal;
+	if (health > 200){
+	    health = 200;
+	}
+	return heal;
     }
     public void specialize() {
 	defense -= 5;//lose 10 points of defense, could turn into extra damage if player is overzealous with specializing

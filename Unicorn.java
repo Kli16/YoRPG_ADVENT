@@ -13,11 +13,20 @@ public class Unicorn extends Character {
 	strength = 999;
 	defense = 100;
 	attackR = 1.5;
+	runchance = 1.0;
+	heal = 250;
     }
     
     public Unicorn(String newname){//overloaded constructor
 	this();
 	name = newname;//set warrior name
+    }
+    public int healself(){
+	health += heal;
+	if (health > 250){
+	    health = 250;
+	}
+	return heal;
     }
     public void specialize() {
 	defense -= 5;//lose 10 points of defense, could turn into extra damage if player is overzealous with specializing

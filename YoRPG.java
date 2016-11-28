@@ -144,55 +144,90 @@ public class YoRPG
     {
 	Monster[] Monsters = { new Ghoul(), new DarkDemon(), new Goat(), new DuneThresher()};
 	int i = 1;
-	int d1, d2;
+	int d1, d2, h1;
+	boolean runsuccess;
 
 	if ( Math.random() >= ( difficulty / 3.0 ) )
 	    System.out.println( "\nNothing to see here. Move along!" );
 	else {
 	    System.out.println( "\nLo, yonder monster approacheth!" );
-
+	    
 	    smaug = Monsters[(int)(Math.random() * 3)];
 	    System.out.println("Player: " + pat.about());
 	    System.out.println("Monster: " + smaug.about());
-	
+	    
 	    while( smaug.isAlive() && pat.isAlive() ) {
-
+		
 		// Give user the option of using a special attack:
 		// If you land a hit, you incur greater damage,
 		// ...but if you get hit, you take more damage.
 		try {
-		    System.out.println( "\nDo you feel lucky?" );
-		    System.out.println( "\t1: Nay.\n\t2: Aye!" );
+		    System.out.println( "\t1: Attack.\n\t2: Specialize\n\t3: Heal.\n\t4: Run." );
 		    i = Integer.parseInt( in.readLine() );
 		}
 		catch ( IOException e ) { }
-
-		if ( i == 2 )
-		    pat.specialize();
-		else
-		    pat.normalize();
-
-		//	System.out.println(pat.attackR);
-		//	System.out.println(pat.strength);
-		//	System.out.println(smaug.defense);
-		d1 = pat.attack( smaug );
-		d2 = smaug.attack( pat );
-
-		System.out.println( "\n" + pat.getName() + " dealt " + d1 +
-				    " points of damage.");
-
-		if (d2 == 0) {
-		    System.out.println("\n" + "Ye Puny " + Monster.about() + "'s smack had no effect on " +
-				       pat.getName() + " the Great.");
+		if ( i == 2 || i == 1){
+		    if ( i == 2 )
+			pat.specialize();
+		    else
+			pat.normalize();
+		    
+		    //	System.out.println(pat.attackR);
+		    //	System.out.println(pat.strength);
+		    //	System.out.println(smaug.defense);
+		    d1 = pat.attack( smaug );
+		    d2 = smaug.attack( pat );
+		    
+		    System.out.println( "\n" + pat.getName() + " dealt " + d1 +
+					" points of damage.");
+		    
+		    if (d2 == 0) {
+			System.out.println("\n" + "Ye Puny " + smaug.about() + "'s smack had no effect on " +
+					   pat.getName() + " the Great.");
+		    }
+		    
+		    else {
+			System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+					    " for " + d2 + " points of damage.");
+		    }
 		}
-
-		else {
-		    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
-				    " for " + d2 + " points of damage.");
+		if (i == 3){
+		    h1 = pat.healself();
+		    d2 = smaug.attack( pat ); 
+		    System.out.println( "\n" + pat.getName() + " healed " + h1 +
+					" points of damage.");
+		    
+		    if (d2 == 0) {
+			System.out.println("\n" + "Ye Puny " + smaug.about() + "'s smack had no effect on " +
+					   pat.getName() + " the Great.");
+		    }
+		    
+		    else {
+			System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+					    " for " + d2 + " points of damage.");
+		    }
 		}
-		
+		if (i == 4){
+		    runsuccess = pat.run();
+		    if (runsuccess == true){
+			smaug.health = 0;
+			System.out.println( "You ran away.");
+		    }
+		    else {
+			d2 = smaug.attack( pat );
+			if (d2 == 0) {
+			    //	    System.out.println("\n" + "Ye Puny " + Monster.about() + "'s smack had no effect on " +
+			    //     pat.getName() + " the Great.");
+			}
+			
+			else {
+			    System.out.println( "\n" + "Ye Olde Monster smacked " + pat.getName() +
+						" for " + d2 + " points of damage.");
+			}
+		    }
+		}
 	    }//end while
-
+	    
 	    //option 1: you & the monster perish
 	    if ( !smaug.isAlive() && !pat.isAlive() ) {
 		System.out.println( "'Twas an epic battle, to be sure... " + 
